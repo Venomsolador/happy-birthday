@@ -1,0 +1,148 @@
+/* Rolagem suave ao clicar nas abas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Configuração geral do corpo da página (Fundo Preto) */
+body {
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  color: #333333;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Cabeçalho principal */
+header {
+  background: linear-gradient(135deg, #ff69b4, #da70d6);
+  color: #000000;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.2em;
+}
+
+/* Menu de Navegação (Abas) */
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  background-color: #000000;
+  color: #c71585;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background-color: #ff1493;
+  color: #060303;
+}
+
+/* Caixa principal do conteúdo */
+main {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Estilo base de todas as abas/seções */
+section.tab-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Wallpapers aplicados em cada seção com altura mínima garantida */
+#mensagem {
+  background-image: url('2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 280px;
+}
+
+#doramas {
+  background-image: url('do.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 280px; 
+}
+
+#twice {
+  background-image: url('1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 280px;
+}
+
+/* Títulos secundários */
+h2 {
+  color: #c71585;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Listas */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+/* Vídeos e mídias */
+video {
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: #000;
+  max-height: 300px;
+  width: 100%;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 40px;
+  color: #888888;
+  font-size: 14px;
+}
+
+/* --- SISTEMA DE ABAS (Lógica de exibição) --- */
+.tab-content {
+  display: none;
+}
+
+.tab-content:target {
+  display: block;
+}
+
+/* Deixa a aba de mensagem aberta por padrão ao carregar o site */
+#mensagem {
+  display: block;
+}
+
+body:has(:target) #mensagem {
+  display: none;
+}
+
+body:has(:target) #mensagem:target {
+  display: block;
+}
